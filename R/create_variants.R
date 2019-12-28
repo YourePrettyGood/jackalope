@@ -466,7 +466,7 @@ to_var_set__vars_theta_info <- function(x,
     # ------------*
     L <- theta * a / mu
     # Now rescale to have total tree length of `L`:
-    phy$edge.length <- phy$edge.length / max(ape::node.depth.edgelength(phy)) * L
+    phy$edge.length <- phy$edge.length / sum(phy$edge.length) * L
 
     phy <- rep(list(phy), n_chroms)
 
